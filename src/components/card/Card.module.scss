@@ -2,26 +2,131 @@
   max-width: 300px;
   &__image-container {
     margin-bottom: 10px;
+    position: relative;
+  }
+  &__actions {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    top: 0;
+    right: 0;
+    left: 0;
+    &-house {
+      color: white;
+      padding: 12px;
+      border-radius: 100%;
+      border: 1px solid white;
+      background: $color-main-red;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+      &:hover,
+      &:focus-visible {
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(1);
+      }
+
+      svg {
+        width: 14px;
+        min-width: 14px;
+      }
+    }
+    &-container {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 6px 10px;
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 22px;
+        padding: 0;
+        transition: transform 0.3s;
+        &:hover,
+        &:focus-visible {
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(1);
+        }
+      }
+      svg {
+        height: 22px;
+        color: $color-dark;
+      }
+    }
   }
   &__image-content {
     display: grid;
     gap: 15px;
     border-radius: 4px;
   }
-  &__content {
-    &-title span {
-      font-weight: bold;
-      color: $color-dark;
-      font-size: 18px;
-      line-height: 130%;
-      transition: color 0.3s;
+  &__title {
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      span {
+        font-weight: bold;
+        color: $color-dark;
+        font-size: 18px;
+        line-height: 130%;
+        transition: color 0.3s;
+        &:hover {
+          color: $color-red;
+          cursor: pointer;
+        }
+      }
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 22px;
+        padding: 0;
+        transition: transform 0.3s;
+        &:hover,
+        &:focus-visible {
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(1);
+        }
+      }
     }
-    &-title span:hover {
-      color: $color-red;
-      cursor: pointer;
+  }
+
+  &__content {
+    &-container {
+      display: grid;
+      gap: 15px;
     }
     &-item {
       font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &--review {
+        color: $color-dark;
+        font-family: $font-family-roboto;
+      }
+    }
+  }
+  &__like-button {
+    --stroke-color: #131921;
+    color: transparent;
+    &--active {
+      --stroke-color: #ff5d54;
+      color: $color-red;
     }
   }
 }

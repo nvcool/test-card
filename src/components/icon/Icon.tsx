@@ -17,7 +17,7 @@ export const Icon = ({
   return (
     <svg
       className={`${s.icon} ${className || ""}`}
-      style={{ width: size, height: size, ...style }}
+      style={{ ...style }}
       aria-hidden="true"
       {...props}>
       <use href={symbolId} />

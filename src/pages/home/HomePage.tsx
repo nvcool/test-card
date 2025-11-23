@@ -15,7 +15,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, Красная площадь",
     subway: "Площадь Революции",
     distance: "0.2 км",
-    rating: 4.9,
+    rating: 4.91,
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, Кремль",
     subway: "Александровский сад",
     distance: "0.5 км",
-    rating: 4.8,
+    rating: 3.44,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, ул. Волхонка, 15",
     subway: "Кропоткинская",
     distance: "0.3 км",
-    rating: 4.7,
+    rating: 2.78,
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, Театральная пл., 1",
     subway: "Театральная",
     distance: "0.1 км",
-    rating: 4.6,
+    rating: 4.26,
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, Лаврушинский пер., 10",
     subway: "Третьяковская",
     distance: "0.4 км",
-    rating: 4.8,
+    rating: 3.86,
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, ул. Крымский Вал, 9",
     subway: "Парк культуры",
     distance: "0.6 км",
-    rating: 4.5,
+    rating: 4.54,
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, проспект Мира, 119",
     subway: "ВДНХ",
     distance: "0.8 км",
-    rating: 4.4,
+    rating: 4.49,
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, Красная площадь",
     subway: "Площадь Революции",
     distance: "0.2 км",
-    rating: 4.9,
+    rating: 4.95,
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, ул. Академика Королёва, 15",
     subway: "ВДНХ",
     distance: "1.2 км",
-    rating: 4.3,
+    rating: 4.34,
   },
   {
     id: 10,
@@ -96,7 +96,7 @@ const mockLandmarks: Landmark[] = [
     location: "Москва, ул. Большая Грузинская, 1",
     subway: "Краснопресненская",
     distance: "0.5 км",
-    rating: 4.6,
+    rating: 4.61,
   },
 ];
 
