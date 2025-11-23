@@ -3,11 +3,16 @@ import { Icon } from "../icon/Icon";
 import { useState, type ComponentProps } from "react";
 import type { Landmark } from "../../types/landmark";
 import { StarRating } from "../starRating/StarRating";
+import { Link } from "../link/Link";
 
 export const Card = ({
+  withButton,
   landmark,
   ...props
-}: ComponentProps<"article"> & { landmark: Landmark }) => {
+}: ComponentProps<"article"> & {
+  landmark: Landmark;
+  withButton?: boolean;
+}) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   const handleLikeToggle = () => {
@@ -17,7 +22,9 @@ export const Card = ({
   return (
     <article className={s.card} {...props}>
       <div className={s[`card__image-container`]}>
-        <img src={landmark.image} alt={landmark.title} />
+        <a href="#">
+          <img src={landmark.image} alt={landmark.title} />
+        </a>
         <div className={s.card__actions}>
           <button aria-label="домой" className={s[`card__actions-house`]}>
             <Icon name="house" />
@@ -34,10 +41,17 @@ export const Card = ({
             </button>
           </div>
         </div>
+
+        <div className={s.card__description}>
+          <p>{landmark.description}</p>
+        </div>
       </div>
+
       <div className={s.card__content}>
         <div className={s[`card__title-container`]}>
-          <h3>{landmark.title}</h3>
+          <a href="#">
+            <h3>{landmark.title}</h3>
+          </a>
           <button
             aria-label={
               isLiked ? "удалить из избранного" : "добавить в избранное"
@@ -51,9 +65,12 @@ export const Card = ({
             />
           </button>
         </div>
+
+        {withButton && <Link className={s.card__link}>перейти</Link>}
+
         <div className={s[`card__content-container`]}>
           <div className={s[`card__content-item`]}>
-            <Icon size={18} name="location" />
+            <Icon size={17} name="location" />
 
             <address>{landmark.location}</address>
           </div>
@@ -62,8 +79,11 @@ export const Card = ({
 
             <span>{landmark.subway}</span>
           </div>
-          <div className={s[`card__content-item`]}>
-            <Icon size={15} name="path" />
+          <div
+            className={`${s[`card__content-item`]} ${
+              s[`card__content-item--primary`]
+            }`}>
+            <Icon size={17} name="path" />
             <span>{landmark.distance}</span>
           </div>
           <div

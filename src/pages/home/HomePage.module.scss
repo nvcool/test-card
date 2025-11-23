@@ -2,13 +2,24 @@
   padding: 20px;
   &__list {
     display: grid;
-    justify-content: center;
+    place-items: center;
     gap: 30px;
   }
 
-  @include mq("lg") {
+  @include mq("xl") {
     &__list {
       grid-template-columns: repeat(3, 1fr);
+      place-items: normal;
+    }
+  }
+
+  @include mq("md") {
+    &__list {
+      li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }

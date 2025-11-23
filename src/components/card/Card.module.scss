@@ -1,8 +1,16 @@
 .card {
   max-width: 300px;
+  width: 100%;
+
   &__image-container {
     margin-bottom: 10px;
     position: relative;
+    overflow: hidden;
+    &:hover {
+      .card__description {
+        transform: translateY(0);
+      }
+    }
   }
   &__actions {
     position: absolute;
@@ -14,7 +22,6 @@
     left: 0;
     &-house {
       color: white;
-      padding: 12px;
       border-radius: 100%;
       border: 1px solid white;
       background: $color-main-red;
@@ -66,6 +73,35 @@
       }
     }
   }
+  &__description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 160%;
+    font-family: $font-family-roboto;
+    border-radius: 0px 0px 4px 4px;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    height: 96px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    p {
+      opacity: 0.9;
+      // overflow: hidden;
+      // display: -webkit-box;
+      // -webkit-box-orient: vertical;
+      // -webkit-line-clamp: 3;
+    }
+  }
+
   &__image-content {
     display: grid;
     gap: 15px;
@@ -75,13 +111,22 @@
     &-container {
       display: flex;
       justify-content: space-between;
+      gap: 13px;
       margin-bottom: 15px;
-      span {
+      h3 {
+        margin: 0;
+      }
+      a {
         font-weight: bold;
         color: $color-dark;
         font-size: 18px;
         line-height: 130%;
         transition: color 0.3s;
+        overflow: hidden;
+        text-decoration: none;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
         &:hover {
           color: $color-red;
           cursor: pointer;
@@ -112,12 +157,20 @@
     }
     &-item {
       font-size: 14px;
+      line-height: 17px;
       display: flex;
       align-items: center;
       gap: 10px;
+      address {
+        font-style: normal;
+      }
       &--review {
         color: $color-dark;
         font-family: $font-family-roboto;
+      }
+      &--primary {
+        font-size: 16px;
+        line-height: 19px;
       }
     }
   }
@@ -130,10 +183,99 @@
     }
   }
 
+  &__link {
+    width: 100%;
+    margin-bottom: 15px;
+    display: none;
+  }
+
   @include mq("md") {
     max-width: 688px;
+    display: flex;
+    gap: 20px;
     &__image-container {
+      min-width: 334px;
+      width: 100%;
+      height: 277px;
+      margin-bottom: 0;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &__content {
+      width: 100%;
+    }
+
+    &__title-container {
+      gap: 15px;
+    }
+  }
+
+  @include mq("xl") {
+    max-width: 420px;
+    flex-direction: column;
+    gap: 15px;
+    &__image-container {
+      height: 348px;
+    }
+    &__title-container {
+      a {
+        font-size: 22px;
+        line-height: 140%;
+      }
+      button {
+        height: fit-content;
+        margin-top: 6px;
+      }
+    }
+    &__content-container {
       display: flex;
+      flex-wrap: wrap;
+    }
+    &__content-item {
+      font-size: 16px;
+      line-height: 19px;
+      &:nth-child(2) {
+        order: 1;
+      }
+      &:nth-child(4) {
+        width: 100%;
+        order: 2;
+      }
+    }
+    &__actions {
+      &-house {
+        width: 54px;
+        height: 54px;
+        svg {
+          width: 20px;
+          min-width: 20px;
+        }
+      }
+
+      &-container {
+        gap: 26px;
+        padding: 14px 21px;
+        button {
+          width: auto;
+        }
+        button:nth-child(1) svg {
+          width: 25px;
+          height: 21px;
+        }
+        button:nth-child(2) svg {
+          width: 32px;
+          height: 30px;
+        }
+        button:nth-child(3) svg {
+          width: 24px;
+          height: 16px;
+        }
+      }
+    }
+    &__link {
+      display: inline-block;
     }
   }
 }

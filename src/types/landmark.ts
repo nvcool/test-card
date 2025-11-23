@@ -6,4 +6,5 @@ export interface Landmark {
   subway: string;
   distance: string;
   rating: number;
+  description: string;
 }

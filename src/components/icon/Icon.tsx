@@ -5,19 +5,13 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string; // Упрощаем контроль размера
 }
 
-export const Icon = ({
-  name,
-  size = 24,
-  className,
-  style,
-  ...props
-}: IconProps) => {
+export const Icon = ({ name, size, className, style, ...props }: IconProps) => {
   const symbolId = `#icon-${name}`;
 
   return (
     <svg
       className={`${s.icon} ${className || ""}`}
-      style={{ ...style }}
+      style={{ width: size, height: size, ...style }}
       aria-hidden="true"
       {...props}>
       <use href={symbolId} />
