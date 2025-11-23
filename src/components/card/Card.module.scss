@@ -11,6 +11,17 @@
         transform: translateY(0);
       }
     }
+    img {
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    a:hover,
+    a:focus-visible {
+      outline: none;
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
   &__actions {
     position: absolute;
@@ -34,6 +45,7 @@
       transition: transform 0.3s;
       &:hover,
       &:focus-visible {
+        outline: none;
         transform: scale(1.1);
       }
       &:active {
@@ -46,7 +58,8 @@
       }
     }
     &-container {
-      background-color: white;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.8);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -61,6 +74,7 @@
         transition: transform 0.3s;
         &:hover,
         &:focus-visible {
+          outline: none;
           transform: scale(1.1);
         }
         &:active {
@@ -127,9 +141,14 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        &:hover {
+        &:hover,
+        &:focus-visible {
+          outline: none;
           color: $color-red;
           cursor: pointer;
+        }
+        &:active {
+          color: $color-dark;
         }
       }
       button {
@@ -141,6 +160,7 @@
         transition: transform 0.3s;
         &:hover,
         &:focus-visible {
+          outline: none;
           transform: scale(1.1);
         }
         &:active {
@@ -248,6 +268,7 @@
       &-house {
         width: 54px;
         height: 54px;
+        border-width: 2px;
         svg {
           width: 20px;
           min-width: 20px;
