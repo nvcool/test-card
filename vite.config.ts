@@ -13,7 +13,22 @@ export default defineConfig({
     }),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
-      symbolId: "icon-[dir]-[name]",
+      symbolId: "icon-[name]",
     }),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+            @use "@/styles/variables.scss" as *;
+            @use "@/styles/mixins.scss" as *;
+          `,
+      },
+    },
+  },
 });

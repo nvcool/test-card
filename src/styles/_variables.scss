@@ -1,14 +1,18 @@
-:root {
-  --color-dark: #131921;
-  --color-main-red: #ff5d54;
-  --color-red: #ff4338;
-  --color-gray: #898c90;
-  --color-gray-alt: #818181;
-  --color-yellow: #fdd91c;
+$color-dark: #131921;
+$color-main-red: #ff5d54;
+$color-red: #ff4338;
+$color-gray: #898c90;
+$color-gray-alt: #818181;
+$color-yellow: #fdd91c;
 
-  --border-image-radius: 4px;
+$border-image-radius: 4px;
 
-  --font-family-base: "Euclid Flex", sans-serif;
+$font-family-base: "Euclid Flex", sans-serif;
 
-  --container-width: 1320px;
-}
+$container-width: 1320px;
+
+$breakpoints: (
+  "xs": 480px,
+  "md": 768px,
+  "lg": 1024px,
+);

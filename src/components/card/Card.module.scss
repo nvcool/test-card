@@ -1,3 +1,27 @@
 .card {
-  width: 300px;
+  max-width: 300px;
+  &__image-container {
+    margin-bottom: 10px;
+  }
+  &__image-content {
+    display: grid;
+    gap: 15px;
+    border-radius: 4px;
+  }
+  &__content {
+    &-title span {
+      font-weight: bold;
+      color: $color-dark;
+      font-size: 18px;
+      line-height: 130%;
+      transition: color 0.3s;
+    }
+    &-title span:hover {
+      color: $color-red;
+      cursor: pointer;
+    }
+    &-item {
+      font-size: 14px;
+    }
+  }
 }

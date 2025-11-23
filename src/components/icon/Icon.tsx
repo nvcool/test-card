@@ -12,13 +12,13 @@ export const Icon = ({
   style,
   ...props
 }: IconProps) => {
-  const symbolId = `#icon-${name}`; // Должен совпадать с форматом в vite.config
+  const symbolId = `#icon-${name}`;
 
   return (
     <svg
       className={`${s.icon} ${className || ""}`}
       style={{ width: size, height: size, ...style }}
-      aria-hidden="true" // Скрываем от скринридеров (декорация)
+      aria-hidden="true"
       {...props}>
       <use href={symbolId} />
     </svg>
