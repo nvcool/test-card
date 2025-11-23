@@ -129,4 +129,11 @@
       color: $color-red;
     }
   }
+
+  @include mq("md") {
+    max-width: 688px;
+    &__image-container {
+      display: flex;
+    }
+  }
 }

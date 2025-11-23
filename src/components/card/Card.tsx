@@ -7,7 +7,7 @@ import { StarRating } from "../starRating/StarRating";
 export const Card = ({
   landmark,
   ...props
-}: ComponentProps<"div"> & { landmark: Landmark }) => {
+}: ComponentProps<"article"> & { landmark: Landmark }) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   const handleLikeToggle = () => {
@@ -15,21 +15,21 @@ export const Card = ({
   };
 
   return (
-    <div className={s.card} {...props}>
+    <article className={s.card} {...props}>
       <div className={s[`card__image-container`]}>
-        <img src={landmark.image} alt="" />
+        <img src={landmark.image} alt={landmark.title} />
         <div className={s.card__actions}>
-          <button className={s[`card__actions-house`]}>
+          <button aria-label="домой" className={s[`card__actions-house`]}>
             <Icon name="house" />
           </button>
           <div className={s[`card__actions-container`]}>
-            <button>
+            <button aria-label="просмотр изображений">
               <Icon name="picture" />
             </button>
-            <button>
+            <button aria-label="панорама 360">
               <Icon name="360" />
             </button>
-            <button>
+            <button aria-label="видео контент">
               <Icon name="camera" />
             </button>
           </div>
@@ -37,8 +37,12 @@ export const Card = ({
       </div>
       <div className={s.card__content}>
         <div className={s[`card__title-container`]}>
-          <span>{landmark.title}</span>
-          <button onClick={handleLikeToggle}>
+          <h3>{landmark.title}</h3>
+          <button
+            aria-label={
+              isLiked ? "удалить из избранного" : "добавить в избранное"
+            }
+            onClick={handleLikeToggle}>
             <Icon
               name="heart"
               className={`${s[`card__like-button`]} ${
@@ -51,7 +55,7 @@ export const Card = ({
           <div className={s[`card__content-item`]}>
             <Icon size={18} name="location" />
 
-            <span>{landmark.location}</span>
+            <address>{landmark.location}</address>
           </div>
           <div className={s[`card__content-item`]}>
             <Icon size={22} name="subway" />
@@ -71,6 +75,6 @@ export const Card = ({
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
